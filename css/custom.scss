@@ -1,0 +1,111 @@
+
+.op-head{
+    height:100vh;
+    background: 
+    radial-gradient(rgba(0,0,0,.5) 1%, transparent 10%) 1px 1px;
+    background-size:16px 16px;
+    background-color:#FF5964;
+    color:#FFF;
+    text-align:right;
+    padding-right: 20px;
+}
+
+.op-head .context-container{
+    color:#FFF;
+    position:relative;
+    top: 40%;
+    float:right;
+    text-shadow: 2px black;
+}
+
+.op-head .context-sns{
+    clear:both;
+    color:#FFF;
+    position:absolute;
+    right:0;
+    left:0;
+    bottom:1em;
+    text-align: center;
+}
+
+.op-head .context-sns .maintext{
+    font-size:12px;
+}
+
+.op-head *{
+    color:#FFF;
+}
+
+
+/*
+ * Glitch style
+ */
+.glitch {
+	position: relative;
+	padding: 0px 1px;
+	outline: 0px;
+	overflow: hidden;
+	cursor: pointer;
+	z-index: 0;
+
+	&::before,
+	&::after {
+		position: absolute;
+		top: 0;
+		left: 0;
+		content: attr(data-text);
+		width: 100%;
+    	height: 100%;
+		opacity: 0;
+		overflow: hidden;
+		animation-duration: 1000ms;
+		animation-delay: 0ms;
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
+		animation-direction: reverse-alternate;
+		z-index: 1;
+	}
+	
+	&::before {
+		padding-right: 1px;
+		text-shadow: -1px 0 #FF5964;
+		animation-name: glitch-animation-red;
+	}
+	
+	&::after {
+		padding-left: 1px;
+		text-shadow: -1px 0 blue;
+		animation-name: glitch-animation-blue;
+	}
+	
+	&:hover {	
+		&::before{
+			animation-name: glitch-animation-red;
+		}
+		&::after { 
+			animation-name: glitch-animation-blue;
+		}
+	}
+}
+
+
+$steps: 10;
+
+@keyframes glitch-animation-blue {
+  	
+	@for $i from 0 through $steps {
+		#{percentage($i*(1/$steps))} {
+			opacity: 1;
+			clip-path: inset( percentage(random(100)/100) 0% percentage(random(100)/100) 0% );
+		}
+	}
+}
+
+@keyframes glitch-animation-red {
+	@for $i from 0 through $steps {
+		#{percentage($i*(1/$steps))} {
+			opacity: 1;
+			clip-path: inset( percentage(random(100)/100) 0% percentage(random(100)/100) 0% );
+		}
+	}
+}

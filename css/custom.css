@@ -1,34 +1,174 @@
-body{
-}
-.op-head{
-    height:100vh;
-    background-color:#FF5964;
-    color:#FFF;
-    text-align:right;
-    padding-right: 20px;
-}
-
-.op-head .context-container{
-    color:#FFF;
-    position:relative;
-    top: 40%;
-    float:right;
+.op-head {
+  height: 100vh;
+  background: radial-gradient(rgba(0, 0, 0, 0.5) 1%, transparent 10%) 1px 1px;
+  background-size: 16px 16px;
+  background-color: #FF5964;
+  color: #FFF;
+  text-align: right;
+  padding-right: 20px;
 }
 
-.op-head .context-sns{
-    clear:both;
-    color:#FFF;
-    position:absolute;
-    right:0;
-    left:0;
-    bottom:1em;
-    text-align: center;
+.op-head .context-container {
+  color: #FFF;
+  position: relative;
+  top: 40%;
+  float: right;
+  text-shadow: 2px black;
 }
 
-.op-head .context-sns .maintext{
-    font-size:12px;
+.op-head .context-sns {
+  clear: both;
+  color: #FFF;
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 1em;
+  text-align: center;
 }
 
-.op-head *{
-    color:#FFF;
+.op-head .context-sns .maintext {
+  font-size: 12px;
 }
+
+.op-head * {
+  color: #FFF;
+}
+
+/*
+ * Glitch style
+ */
+.glitch {
+  position: relative;
+  padding: 0px 1px;
+  outline: 0px;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 0;
+}
+.glitch::before, .glitch::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: attr(data-text);
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  overflow: hidden;
+  animation-duration: 1000ms;
+  animation-delay: 0ms;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: reverse-alternate;
+  z-index: 1;
+}
+.glitch::before {
+  padding-right: 1px;
+  text-shadow: -1px 0 #FF5964;
+  animation-name: glitch-animation-red;
+}
+.glitch::after {
+  padding-left: 1px;
+  text-shadow: -1px 0 blue;
+  animation-name: glitch-animation-blue;
+}
+.glitch:hover::before {
+  animation-name: glitch-animation-red;
+}
+.glitch:hover::after {
+  animation-name: glitch-animation-blue;
+}
+
+@keyframes glitch-animation-blue {
+  0% {
+    opacity: 1;
+    clip-path: inset(31% 0% 20% 0%);
+  }
+  10% {
+    opacity: 1;
+    clip-path: inset(72% 0% 62% 0%);
+  }
+  20% {
+    opacity: 1;
+    clip-path: inset(47% 0% 70% 0%);
+  }
+  30% {
+    opacity: 1;
+    clip-path: inset(10% 0% 35% 0%);
+  }
+  40% {
+    opacity: 1;
+    clip-path: inset(69% 0% 40% 0%);
+  }
+  50% {
+    opacity: 1;
+    clip-path: inset(65% 0% 51% 0%);
+  }
+  60% {
+    opacity: 1;
+    clip-path: inset(89% 0% 17% 0%);
+  }
+  70% {
+    opacity: 1;
+    clip-path: inset(87% 0% 19% 0%);
+  }
+  80% {
+    opacity: 1;
+    clip-path: inset(87% 0% 99% 0%);
+  }
+  90% {
+    opacity: 1;
+    clip-path: inset(57% 0% 32% 0%);
+  }
+  100% {
+    opacity: 1;
+    clip-path: inset(46% 0% 13% 0%);
+  }
+}
+@keyframes glitch-animation-red {
+  0% {
+    opacity: 1;
+    clip-path: inset(44% 0% 28% 0%);
+  }
+  10% {
+    opacity: 1;
+    clip-path: inset(54% 0% 33% 0%);
+  }
+  20% {
+    opacity: 1;
+    clip-path: inset(43% 0% 16% 0%);
+  }
+  30% {
+    opacity: 1;
+    clip-path: inset(3% 0% 23% 0%);
+  }
+  40% {
+    opacity: 1;
+    clip-path: inset(4% 0% 39% 0%);
+  }
+  50% {
+    opacity: 1;
+    clip-path: inset(47% 0% 79% 0%);
+  }
+  60% {
+    opacity: 1;
+    clip-path: inset(35% 0% 34% 0%);
+  }
+  70% {
+    opacity: 1;
+    clip-path: inset(23% 0% 33% 0%);
+  }
+  80% {
+    opacity: 1;
+    clip-path: inset(78% 0% 62% 0%);
+  }
+  90% {
+    opacity: 1;
+    clip-path: inset(71% 0% 65% 0%);
+  }
+  100% {
+    opacity: 1;
+    clip-path: inset(27% 0% 83% 0%);
+  }
+}
+
+/*# sourceMappingURL=custom.css.map */
