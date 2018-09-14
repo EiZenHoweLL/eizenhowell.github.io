@@ -1,13 +1,14 @@
 .op-head {
   height: 100vh;
+  min-height: 350px;
   background: radial-gradient(rgba(0, 0, 0, 0.5) 1%, transparent 10%) 1px 1px;
   background-size: 16px 16px;
   background-color: #FF5964;
   color: #FFF;
   text-align: right;
   padding-right: 20px;
+  position: relative;
 }
-
 .op-head .context-container {
   color: #FFF;
   position: relative;
@@ -15,7 +16,6 @@
   float: right;
   text-shadow: 2px black;
 }
-
 .op-head .context-sns {
   clear: both;
   color: #FFF;
@@ -25,11 +25,9 @@
   bottom: 1em;
   text-align: center;
 }
-
 .op-head .context-sns .maintext {
   font-size: 12px;
 }
-
 .op-head * {
   color: #FFF;
 }
@@ -81,93 +79,115 @@
 @keyframes glitch-animation-blue {
   0% {
     opacity: 1;
-    clip-path: inset(31% 0% 20% 0%);
+    clip-path: inset(31% 0% 89% 0%);
+    margin-top: 2px;
   }
   10% {
     opacity: 1;
-    clip-path: inset(72% 0% 62% 0%);
+    clip-path: inset(79% 0% 8% 0%);
+    margin-top: 1px;
   }
   20% {
     opacity: 1;
-    clip-path: inset(47% 0% 70% 0%);
+    clip-path: inset(11% 0% 26% 0%);
+    margin-top: 1px;
   }
   30% {
     opacity: 1;
-    clip-path: inset(10% 0% 35% 0%);
+    clip-path: inset(90% 0% 95% 0%);
+    margin-top: 2px;
   }
   40% {
     opacity: 1;
-    clip-path: inset(69% 0% 40% 0%);
+    clip-path: inset(77% 0% 81% 0%);
+    margin-top: 1px;
   }
   50% {
     opacity: 1;
-    clip-path: inset(65% 0% 51% 0%);
+    clip-path: inset(20% 0% 85% 0%);
+    margin-top: 1px;
   }
   60% {
     opacity: 1;
-    clip-path: inset(89% 0% 17% 0%);
+    clip-path: inset(71% 0% 51% 0%);
+    margin-top: 2px;
   }
   70% {
     opacity: 1;
-    clip-path: inset(87% 0% 19% 0%);
+    clip-path: inset(50% 0% 14% 0%);
+    margin-top: 2px;
   }
   80% {
     opacity: 1;
-    clip-path: inset(87% 0% 99% 0%);
+    clip-path: inset(94% 0% 32% 0%);
+    margin-top: 2px;
   }
   90% {
     opacity: 1;
-    clip-path: inset(57% 0% 32% 0%);
+    clip-path: inset(99% 0% 18% 0%);
+    margin-top: 2px;
   }
   100% {
     opacity: 1;
-    clip-path: inset(46% 0% 13% 0%);
+    clip-path: inset(48% 0% 13% 0%);
+    margin-top: 1px;
   }
 }
 @keyframes glitch-animation-red {
   0% {
     opacity: 1;
-    clip-path: inset(44% 0% 28% 0%);
+    clip-path: inset(3% 0% 85% 0%);
+    margin-top: 1px;
   }
   10% {
     opacity: 1;
-    clip-path: inset(54% 0% 33% 0%);
+    clip-path: inset(80% 0% 10% 0%);
+    margin-top: 2px;
   }
   20% {
     opacity: 1;
-    clip-path: inset(43% 0% 16% 0%);
+    clip-path: inset(76% 0% 86% 0%);
+    margin-top: 3px;
   }
   30% {
     opacity: 1;
-    clip-path: inset(3% 0% 23% 0%);
+    clip-path: inset(23% 0% 64% 0%);
+    margin-top: 1px;
   }
   40% {
     opacity: 1;
-    clip-path: inset(4% 0% 39% 0%);
+    clip-path: inset(95% 0% 13% 0%);
+    margin-top: 1px;
   }
   50% {
     opacity: 1;
-    clip-path: inset(47% 0% 79% 0%);
+    clip-path: inset(87% 0% 42% 0%);
+    margin-top: 3px;
   }
   60% {
     opacity: 1;
-    clip-path: inset(35% 0% 34% 0%);
+    clip-path: inset(60% 0% 52% 0%);
+    margin-top: 2px;
   }
   70% {
     opacity: 1;
-    clip-path: inset(23% 0% 33% 0%);
+    clip-path: inset(85% 0% 35% 0%);
+    margin-top: 3px;
   }
   80% {
     opacity: 1;
-    clip-path: inset(78% 0% 62% 0%);
+    clip-path: inset(77% 0% 100% 0%);
+    margin-top: 3px;
   }
   90% {
     opacity: 1;
-    clip-path: inset(71% 0% 65% 0%);
+    clip-path: inset(30% 0% 25% 0%);
+    margin-top: 1px;
   }
   100% {
     opacity: 1;
-    clip-path: inset(27% 0% 83% 0%);
+    clip-path: inset(1% 0% 69% 0%);
+    margin-top: 3px;
   }
 }
 

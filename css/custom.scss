@@ -1,6 +1,7 @@
 
 .op-head{
     height:100vh;
+    min-height:350px;
     background: 
     radial-gradient(rgba(0,0,0,.5) 1%, transparent 10%) 1px 1px;
     background-size:16px 16px;
@@ -8,17 +9,17 @@
     color:#FFF;
     text-align:right;
     padding-right: 20px;
-}
-
-.op-head .context-container{
-    color:#FFF;
     position:relative;
-    top: 40%;
-    float:right;
-    text-shadow: 2px black;
-}
-
-.op-head .context-sns{
+    
+    .context-container{
+        color:#FFF;
+        position:relative;
+        top: 40%;
+        float:right;
+        text-shadow: 2px black;
+    }
+    
+    .context-sns{
     clear:both;
     color:#FFF;
     position:absolute;
@@ -26,16 +27,14 @@
     left:0;
     bottom:1em;
     text-align: center;
-}
-
-.op-head .context-sns .maintext{
-    font-size:12px;
-}
-
-.op-head *{
+    .maintext{
+            font-size:12px;
+        }
+    }
+    *{
     color:#FFF;
+    }
 }
-
 
 /*
  * Glitch style
@@ -97,6 +96,7 @@ $steps: 10;
 		#{percentage($i*(1/$steps))} {
 			opacity: 1;
 			clip-path: inset( percentage(random(100)/100) 0% percentage(random(100)/100) 0% );
+			margin-top: random(2)+px;
 		}
 	}
 }
@@ -106,6 +106,7 @@ $steps: 10;
 		#{percentage($i*(1/$steps))} {
 			opacity: 1;
 			clip-path: inset( percentage(random(100)/100) 0% percentage(random(100)/100) 0% );
+			margin-top: random(3)+px;
 		}
 	}
 }
