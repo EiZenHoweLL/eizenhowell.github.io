@@ -26,6 +26,14 @@ $glitch_blue_color:#35a7ff;
         top: 40%;
         float:right;
         text-shadow: 2px black;
+        .maintext {
+            animation-name: shake;
+            animation-duration: 1000ms;
+            animation-delay: 0ms;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-direction: reverse-alternate;
+        }
     }
     
     .context-sns{
@@ -95,7 +103,7 @@ $glitch_blue_color:#35a7ff;
 }
 
 
-$steps: 5;
+$steps: 10;
 
 @keyframes glitch-animation-blue {
   	
@@ -104,7 +112,7 @@ $steps: 5;
 			opacity: 1;
 			clip-path: inset( percentage(random(100)/100) 0% percentage(random(100)/100) 0% );
 			margin-top: random(2)+px;
-            z-index: random(2)-2;
+            //transform: skewX((random(5))+deg);
             //$chances: random(5);
             //@if ($chances == 1){
             //    background-color: $glitch_blue_color;
@@ -119,7 +127,122 @@ $steps: 5;
 			opacity: 1;
 			//clip-path: inset( percentage(random(100)/100) 0% percentage(random(100)/100) 0% );
 			margin-top: random(2)+px;
-            z-index: random(2)-2;
 		}
 	}
 }
+
+@keyframes shake {
+	@for $i from 0 through $steps {
+		#{percentage($i*(1/$steps))} {
+            transform: skewX((random(10)-10)+deg);
+		}
+	}
+}
+
+/*
+
+
+@keyframes glitch-animation-blue {
+  0% {
+    opacity: 1;
+    clip-path: inset(55% 0% 20% 0%);
+    margin-top: 2px;
+  }
+  10% {
+    opacity: 1;
+    clip-path: inset(64% 0% 35% 0%);
+    margin-top: 1px;
+  }
+  20% {
+    opacity: 1;
+    clip-path: inset(7% 0% 35% 0%);
+    margin-top: 2px;
+  }
+  30% {
+    opacity: 1;
+    clip-path: inset(14% 0% 41% 0%);
+    margin-top: 1px;
+  }
+  40% {
+    opacity: 1;
+    clip-path: inset(61% 0% 46% 0%);
+    margin-top: 2px;
+  }
+  50% {
+    opacity: 1;
+    clip-path: inset(5% 0% 92% 0%);
+    margin-top: 2px;
+  }
+  60% {
+    opacity: 1;
+    clip-path: inset(78% 0% 48% 0%);
+    margin-top: 2px;
+  }
+  70% {
+    opacity: 1;
+    clip-path: inset(52% 0% 100% 0%);
+    margin-top: 1px;
+  }
+  80% {
+    opacity: 1;
+    clip-path: inset(97% 0% 74% 0%);
+    margin-top: 2px;
+  }
+  90% {
+    opacity: 1;
+    clip-path: inset(70% 0% 20% 0%);
+    margin-top: 2px;
+  }
+  100% {
+    opacity: 1;
+    clip-path: inset(43% 0% 24% 0%);
+    margin-top: 2px;
+  }
+}
+@keyframes glitch-animation-red {
+  0% {
+    opacity: 1;
+    margin-top: 1px;
+  }
+  10% {
+    opacity: 1;
+    margin-top: 2px;
+  }
+  20% {
+    opacity: 1;
+    margin-top: 1px;
+  }
+  30% {
+    opacity: 1;
+    margin-top: 2px;
+  }
+  40% {
+    opacity: 1;
+    margin-top: 2px;
+  }
+  50% {
+    opacity: 1;
+    margin-top: 2px;
+  }
+  60% {
+    opacity: 1;
+    margin-top: 1px;
+  }
+  70% {
+    opacity: 1;
+    margin-top: 2px;
+  }
+  80% {
+    opacity: 1;
+    margin-top: 1px;
+  }
+  90% {
+    opacity: 1;
+    margin-top: 1px;
+  }
+  100% {
+    opacity: 1;
+    margin-top: 2px;
+  }
+}
+*/
