@@ -1,19 +1,27 @@
-$main_bg: #FF5964;
+$main_bg: #FFF;
+$main_bg_accent: rgba(0,0,0,.3);
+$text_color_main:#666;
+$text_color_bg_main:#444;
+$glitch_red_color:#FF5964;
+$glitch_blue_color:#35a7ff;
 
 .op-head{
     height:100vh;
     min-height:350px;
     background: 
-    radial-gradient(rgba(0,0,0,.5) 1%, transparent 10%) 1px 1px;
+    radial-gradient($main_bg_accent 1%, transparent 10%) 1px 1px;
     background-size:16px 16px;
     background-color: $main_bg;
-    color:#FFF;
+    color:$text_color_main;
     text-align:right;
     padding-right: 20px;
     position:relative;
     
+    *{
+        color:$text_color_main;
+        //background-color:$text_color_bg_main;
+    }
     .context-container{
-        color:#FFF;
         position:relative;
         top: 40%;
         float:right;
@@ -21,19 +29,15 @@ $main_bg: #FF5964;
     }
     
     .context-sns{
-    clear:both;
-    color:#FFF;
-    position:absolute;
-    right:0;
-    left:0;
-    bottom:1em;
-    text-align: center;
-    .maintext{
-            font-size:12px;
-        }
-    }
-    *{
-    color:#FFF;
+        clear:both;
+        position:absolute;
+        right:0;
+        left:0;
+        bottom:1em;
+        text-align: center;
+        .maintext{
+                font-size:12px;
+            }
     }
 }
 
@@ -63,18 +67,20 @@ $main_bg: #FF5964;
 		animation-timing-function: linear;
 		animation-iteration-count: infinite;
 		animation-direction: reverse-alternate;
-		z-index: 1;
+		z-index: -1;
 	}
 	
 	&::before {
 		padding-right: 1px;
-		text-shadow: -1px 0 #FF5964;
+		//text-shadow: -1px 0 $glitch_red_color;
+		color:$glitch_red_color;
 		animation-name: glitch-animation-red;
 	}
 	
 	&::after {
 		padding-left: 1px;
-		text-shadow: -1px 0 blue;
+		//text-shadow: -1px 0 $glitch_blue_color;
+		color:$glitch_blue_color;
 		animation-name: glitch-animation-blue;
 	}
 	
@@ -89,7 +95,7 @@ $main_bg: #FF5964;
 }
 
 
-$steps: 10;
+$steps: 5;
 
 @keyframes glitch-animation-blue {
   	
@@ -98,6 +104,11 @@ $steps: 10;
 			opacity: 1;
 			clip-path: inset( percentage(random(100)/100) 0% percentage(random(100)/100) 0% );
 			margin-top: random(2)+px;
+            z-index: random(2)-2;
+            //$chances: random(5);
+            //@if ($chances == 1){
+            //    background-color: $glitch_blue_color;
+            //}
 		}
 	}
 }
@@ -106,8 +117,9 @@ $steps: 10;
 	@for $i from 0 through $steps {
 		#{percentage($i*(1/$steps))} {
 			opacity: 1;
-			clip-path: inset( percentage(random(100)/100) 0% percentage(random(100)/100) 0% );
-			margin-top: random(3)+px;
+			//clip-path: inset( percentage(random(100)/100) 0% percentage(random(100)/100) 0% );
+			margin-top: random(2)+px;
+            z-index: random(2)-2;
 		}
 	}
 }
