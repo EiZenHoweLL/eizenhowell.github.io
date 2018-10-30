@@ -1,5 +1,6 @@
 .maintext {
   padding-bottom: 5px !important;
+  font-family: "Permanent Marker", cursive;
 }
 
 .op-head {
@@ -89,72 +90,72 @@
 @keyframes glitch-animation-blue {
   0% {
     opacity: 1;
-    clip-path: inset(17% 0% 89% 0%);
+    clip-path: inset(64% 0% 49% 0%);
     margin-top: 2px;
   }
   10% {
     opacity: 1;
-    clip-path: inset(32% 0% 54% 0%);
-    margin-top: 1px;
+    clip-path: inset(54% 0% 18% 0%);
+    margin-top: 2px;
   }
   20% {
     opacity: 1;
-    clip-path: inset(90% 0% 91% 0%);
-    margin-top: 1px;
+    clip-path: inset(19% 0% 87% 0%);
+    margin-top: 2px;
   }
   30% {
     opacity: 1;
-    clip-path: inset(24% 0% 82% 0%);
+    clip-path: inset(38% 0% 40% 0%);
     margin-top: 2px;
   }
   40% {
     opacity: 1;
-    clip-path: inset(9% 0% 56% 0%);
-    margin-top: 2px;
+    clip-path: inset(3% 0% 67% 0%);
+    margin-top: 1px;
   }
   50% {
     opacity: 1;
-    clip-path: inset(81% 0% 3% 0%);
+    clip-path: inset(54% 0% 4% 0%);
     margin-top: 1px;
   }
   60% {
     opacity: 1;
-    clip-path: inset(87% 0% 19% 0%);
+    clip-path: inset(56% 0% 77% 0%);
     margin-top: 2px;
   }
   70% {
     opacity: 1;
-    clip-path: inset(50% 0% 100% 0%);
-    margin-top: 1px;
+    clip-path: inset(100% 0% 94% 0%);
+    margin-top: 2px;
   }
   80% {
     opacity: 1;
-    clip-path: inset(65% 0% 81% 0%);
+    clip-path: inset(20% 0% 17% 0%);
     margin-top: 2px;
   }
   90% {
     opacity: 1;
-    clip-path: inset(23% 0% 41% 0%);
+    clip-path: inset(91% 0% 10% 0%);
     margin-top: 1px;
   }
   100% {
     opacity: 1;
-    clip-path: inset(10% 0% 22% 0%);
+    clip-path: inset(84% 0% 22% 0%);
     margin-top: 2px;
   }
 }
 @keyframes glitch-animation-red {
   0% {
     opacity: 1;
-    margin-top: 1px;
+    margin-top: 2px;
   }
   10% {
     opacity: 1;
-    margin-top: 2px;
+    margin-top: 1px;
   }
   20% {
     opacity: 1;
-    margin-top: 2px;
+    margin-top: 1px;
   }
   30% {
     opacity: 1;
@@ -162,15 +163,15 @@
   }
   40% {
     opacity: 1;
-    margin-top: 2px;
+    margin-top: 1px;
   }
   50% {
     opacity: 1;
-    margin-top: 1px;
+    margin-top: 2px;
   }
   60% {
     opacity: 1;
-    margin-top: 1px;
+    margin-top: 2px;
   }
   70% {
     opacity: 1;
@@ -178,50 +179,50 @@
   }
   80% {
     opacity: 1;
-    margin-top: 1px;
+    margin-top: 2px;
   }
   90% {
     opacity: 1;
-    margin-top: 1px;
+    margin-top: 2px;
   }
   100% {
     opacity: 1;
-    margin-top: 2px;
+    margin-top: 1px;
   }
 }
 @keyframes shake {
   0% {
-    transform: skewX(-8deg);
+    transform: skewX(-5deg);
   }
   10% {
-    transform: skewX(-8deg);
+    transform: skewX(-9deg);
   }
   20% {
     transform: skewX(-3deg);
   }
   30% {
-    transform: skewX(-3deg);
+    transform: skewX(-4deg);
   }
   40% {
     transform: skewX(-2deg);
   }
   50% {
-    transform: skewX(-6deg);
-  }
-  60% {
-    transform: skewX(-5deg);
-  }
-  70% {
-    transform: skewX(-4deg);
-  }
-  80% {
-    transform: skewX(-6deg);
-  }
-  90% {
     transform: skewX(-2deg);
   }
+  60% {
+    transform: skewX(-3deg);
+  }
+  70% {
+    transform: skewX(0deg);
+  }
+  80% {
+    transform: skewX(-7deg);
+  }
+  90% {
+    transform: skewX(-3deg);
+  }
   100% {
-    transform: skewX(-9deg);
+    transform: skewX(-7deg);
   }
 }
 /*
