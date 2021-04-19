@@ -130,7 +130,7 @@ function initializeData(data){
             .attr("y", 10)
             .attr("text-anchor", "middle")
             .text("SPIN")
-            .style({"font-weight":"bold", "font-size":"30px"});
+            .style({"font-weight":"bold", "font-size":"30px","cursor":"pointer"});
     } else {
         container.append("defs")
             .append("pattern")
