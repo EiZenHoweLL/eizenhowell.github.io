@@ -1,0 +1,18 @@
+#chart{
+    width:500px;
+    float:left;
+}
+#caption{
+    width:50%;
+    display:flex;
+    height: 500px;
+    align-items:flex-start;
+    padding-left:30px;
+}
+#caption .text{
+    align-self:center;
+}
+
+body{
+    font-family:sans-serif;
+}

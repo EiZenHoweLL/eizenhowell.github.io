@@ -1,0 +1,30 @@
+<html>
+<head>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+</head>
+<BODY>
+<div id="chart"></div>
+<div id="caption">
+    <div class="text"></div>
+</div>
+<div id="form">
+    <form name="customForm">
+        <input type="button" value="Add data" onclick="addNode()">
+        <input type="button" value="Generate Default Data" onclick="generateDefault()">
+        <table id="data-table">
+            <thead>
+                <th>Text</th>
+                <th>Caption</th>
+                <th>
+                    &nbsp;
+                </th>
+            </thead>
+        </table>
+        <textarea name="textData"></textarea>
+    </form>
+</div>
+<script src="./js/spinwheel.js"></script>
+<script>initializeData(null);generateDefault();</script>
+</BODY>
+</html>
