@@ -254,7 +254,7 @@ function renderData(){
 function applyPageCustomization(){
     var customForm = document.customForm;
     var spinny = document.getElementById("spinny");
-    if (customForm.value!=null){
+    if (customForm.color.value!=null){
         spinny.setAttribute("style", "background-color:"+customForm.color.value);
     }
     renderData();
