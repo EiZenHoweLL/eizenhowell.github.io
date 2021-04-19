@@ -3,27 +3,49 @@
 <head>
     <link rel="stylesheet" href="./css/style.css">
     <script src="https://d3js.org/d3.v3.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@1,700&display=swap" rel="stylesheet">
 </head>
 <BODY>
-<div id="chart"></div>
-<div id="caption">
-    <div class="text"></div>
-</div>
-<div id="form">
-    <form name="customForm">
-        <input type="button" value="Add data" onclick="addNode()">
-        <input type="button" value="Generate Default Data" onclick="generateDefault()">
-        <table id="data-table">
-            <thead>
-                <th>Text</th>
-                <th>Caption</th>
-                <th>
-                    &nbsp;
-                </th>
-            </thead>
-        </table>
-        <textarea name="textData"></textarea>
-    </form>
+    <div id="spinny">
+        <div id="chart"></div>
+        <div id="caption">
+            <div class="text"></div>
+        </div></div>
+<div id="customization">
+    <div id="form">
+        <form name="dataForm">
+            <h1>Data Tables</h1>
+            <input type="button" value="Add data" onclick="addNode()">
+            <input type="button" value="Generate Default Data" onclick="generateDefault()">
+            <table id="data-table">
+                <thead>
+                    <th>Text</th>
+                    <th>Caption</th>
+                    <th>
+                        &nbsp;
+                    </th>
+                </thead>
+            </table>
+            <textarea name="textData"></textarea>
+        </form>
+    </div>
+    <div id="page-custom">
+        <h1>Page Customization</h1><br />
+        <form name="customForm">
+            <table>
+                <tr>
+                    <td>Background Color</td>
+                    <td><input type="color" name="color" value="#00FF00"/></td>
+                </tr>
+                <tr>
+                    <td>Custom Logo</td>
+                    <td><input type="text" name="logo" /></td>
+                </tr>
+            </table>
+            <input type="button" value="Apply Change" onclick="applyPageCustomization()"/>
+        </form>
+    </div>
 </div>
 <script src="./js/spinwheel.js"></script>
 <script>initializeData(null);generateDefault();</script>

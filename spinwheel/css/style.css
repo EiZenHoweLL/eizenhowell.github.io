@@ -1,5 +1,15 @@
+body{
+    font-family:sans-serif;
+}
+#spinny{
+    background-color:#0F0;
+}
+#chart,#caption{
+    font-family: 'Roboto Condensed', sans-serif;
+}
 #chart{
     width:500px;
+    height:500px;
     float:left;
 }
 #caption{
@@ -12,7 +22,12 @@
 #caption .text{
     align-self:center;
 }
-
-body{
-    font-family:sans-serif;
+#customization{
+    display:flex;
+    align-items:flex-start;
+    width:100%;
 }
+#page-custom, #form{
+    width:50%;
+}
+

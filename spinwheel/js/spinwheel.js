@@ -113,20 +113,47 @@ function initializeData(data){
     .append("path")
     .attr("d", "M-" + (dR*.15) + ",0L0," + (dR*.05) + "L0,-" + (dR*.05) + "Z")
     .style({"fill":"black"});
-    //draw spin circle
-    container.append("circle")
+    var logo = document.customForm.logo.value;
+    if (logo==null || logo==""){
+        //draw spin circle
+        container.append("circle")
         .attr("cx", 0)
         .attr("cy", 0)
         .attr("r", 60)
+        .attr("stroke", "black")
+        .attr("stroke-width", 2)
         .style({"fill":"white","cursor":"pointer"});
-    //spin text
-    container.append("text")
-        .attr("x", 0)
-        .attr("y", 10)
-        .attr("text-anchor", "middle")
-        .text("SPIN")
-        .style({"font-weight":"bold", "font-size":"30px"});
 
+        //spin text
+        container.append("text")
+            .attr("x", 0)
+            .attr("y", 10)
+            .attr("text-anchor", "middle")
+            .text("SPIN")
+            .style({"font-weight":"bold", "font-size":"30px"});
+    } else {
+        container.append("defs")
+            .append("pattern")
+            .attr("id", "customlogo")
+            .attr("height", "100%")
+            .attr("width", "100%")
+            .attr("viewbox", "0 0 120 120")
+            .append("image")
+            .attr("x", "0%")
+            .attr("y", "0%")
+            .attr("height", 120)
+            .attr("width", 120)
+            .attr("xlink:href", logo);
+        //draw spin circle
+        container.append("circle")
+            .attr("cx", 0)
+            .attr("cy", 0)
+            .attr("r", 60)
+            .attr("stroke", "black")
+            .attr("stroke-width", 2)
+            .attr("fill","url(#customlogo)")
+            .style({"cursor":"pointer",});
+    }
 
     function rotTween(to) {
     var i = d3.interpolate(oldrotation % 360, rotation);
@@ -167,9 +194,9 @@ function addNode(data){
     var rowCount = tableData.rows.length;
     var row = tableData.insertRow(-1);
     var cell = row.insertCell(0); // Text 
-    cell.appendChild(generateInput("text", "text", data!=null?data.label:null, null));
+    cell.appendChild(generateInput("text", "text", data!=null?data.label:"Test "+rowCount , null));
     var cell = row.insertCell(1); // Caption 
-    cell.appendChild(generateInput("caption", "text", data!=null?data.caption:null, null));
+    cell.appendChild(generateInput("caption", "text", data!=null?data.caption:"Caption for Text "+rowCount, null));
     var cell = row.insertCell(2); // hidden value + button 
     cell.appendChild(generateInput("caption", "hidden", data!=null?data.value:rowCount, null));
     cell.appendChild(generateInput("del", "button", "-", "delNode("+ (rowCount) + ")"));
@@ -182,7 +209,7 @@ function generateInput(name, type, value, onclick){
     inputEl.name = name;
     inputEl.value = value;
     if (type == "text"){
-        inputEl.setAttribute("onchange","generateJSONText();");
+        inputEl.setAttribute("onchange","renderData();");
     }
     if (onclick!= null){
         inputEl.setAttribute("onclick", onclick);
@@ -220,6 +247,16 @@ function processData(){
 
 function renderData(){
     var spinwheeldata = processData();
-    document.customForm.textData.value = JSON.stringify(spinwheeldata);
+    document.dataForm.textData.value = JSON.stringify(spinwheeldata);
     initializeData(spinwheeldata);
+}
+
+function applyPageCustomization(){
+    var customForm = document.customForm;
+    var spinny = document.getElementById("spinny");
+    if (customForm.value!=null){
+        spinny.setAttribute("style", "background-color:"+customForm.color.value);
+    }
+    renderData();
+
 }
